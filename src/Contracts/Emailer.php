@@ -1,6 +1,6 @@
 <?php
 
-namespace Wovv\Modules\Common\Contracts\Emails;
+namespace Bronanza\Emailer\Contracts;
 
 /**
  * An interface to send email

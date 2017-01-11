@@ -1,6 +1,6 @@
 <?php
 
-namespace Bronanza\Emailer\Emails;
+namespace Bronanza\Emailer;
 
 use Mail;
 use Bronanza\Emailer\Contracts\Emailer;

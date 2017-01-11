@@ -1,12 +1,12 @@
 <?php
 
-namespace Wovv\Modules\Common\Contracts\Emails;
+namespace Bronanza\Emailer\Contracts;
 
 use Illuminate\Mail\Message;
 
 /**
  * An interface to represent email
- * @author Sendy Halim <sendyhalim93@gmail.com>
+ * @author Bobby Sutriadi <bobbysutriadi@gmail.com>
  */
 interface Email
 {

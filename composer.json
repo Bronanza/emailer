@@ -1,0 +1,32 @@
+{
+    "name": "bronanza/laravel-emailer",
+    "description": "This package provides abstraction for sending email",
+    "keywords": ["laravel", "email"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bobby Sutriadi",
+            "email": "bobbysutriadi@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "guzzlehttp/guzzle": "^6.1",
+        "illuminate/mail": "~5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.1",
+        "mockery/mockery": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bronanza\\Emailer\\": "src/"
+        }
+    },
+    "autoload-dev":{
+	"psr-4": {
+            "Tests\\": "tests/"
+     	}
+     },
+    "minimum-stability": "stable"
+}
