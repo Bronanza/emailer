@@ -4,7 +4,7 @@ namespace Bronanza\Emailer\Contracts;
 
 /**
  * An interface to send email
- * @author Sendy Halim <sendyhalim93@gmail.com>
+ * @author Bossy Sutriadi <bobbysutriadi@gmail.com>
  */
 interface Emailer
 {
