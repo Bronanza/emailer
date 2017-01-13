@@ -2,23 +2,11 @@
 
 laravel-emailer add a way to 
 
-# Installation 
+## Installation 
 1) To install laravel-ongkir, add the following line to composer.json. Then run composer update:
 ```
 "bronanza/laravel-emailer": "dev-master"
-// View that will be used for the email
-    public function template()
-    {
-        return 'app.email.useremail';
-    }
-
-    // Data that will be used in the email
-    public function templateData()
-    {
-        return [
-            'user' => $this->user,
-        ];
-    }```
+```
 2) Add the following code to the AppServiceProvider.php
 
 ```
