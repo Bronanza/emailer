@@ -109,8 +109,7 @@ class SendEmail
         // Create a new Email object that contains the configuration
         $email = App::make('App\Http\Controllers\UserEmail');
 
-        $this->apeng->send($email);
-        print_r($email->template());
+        $this->email->send($email);
     }
 }
 ```
