@@ -18,7 +18,8 @@ public function register()
     );
 }
 ```
-3) Make a class that contain the confifuration for the email
+## Usage
+1) Make a class that contain the confifuration for the email
 
 ```
 <?php
@@ -66,7 +67,7 @@ class ResetPasswordEmail implements Email
 }
 ```
 
-4) 
+2) 
 
 ```
 <?php
@@ -96,7 +97,7 @@ class SendEmail
     {
         // Create a new Email object that contains the configuration
         $email = App::make('App\Http\Controllers\UserEmail');
-
+        // Send the email
         $this->email->send($email);
     }
 }
