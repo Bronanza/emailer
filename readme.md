@@ -23,27 +23,33 @@ public function register()
 
 ```
 <?php
+namespace App\Http\Controllers;
 
-use Tests\Models\User;
-use Tests\Emails\
 use Illuminate\Mail\Message;
+use Bronanza\Emailer\Contracts\Email;
+use App\User;
 
-class ResetPasswordEmail implements Email
+class UserEmail implements Email
 {
-    protected $user;
-    
+    /**
+     * Show the profile for the given user.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+
     public function __construct(User $user)
     {
         $this->user = $user;
     }
-    
+
     // View that will be used for the email
     public function template()
     {
-        return 'emails.user.reset-password';
+        return 'email.email-test';
     }
-    
-    // Data that will be used in the email
+
+    // Data that will be used in the view
     public function templateData()
     {
         return [
@@ -54,8 +60,12 @@ class ResetPasswordEmail implements Email
     public function setup()
     {
         return function (Message $message) {
-            $customerSupport = config('mail.customerSupport');
-            $subject = trans('user/emails/reset-password.subject');
+            $customerSupport = [
+                'email' => 'apeng@example.com',
+                'name' => 'apeng'
+            ];
+
+            $subject = 'Test Sending Email';
 
             return $message
                 ->from($customerSupport['email'], $customerSupport['name'])
@@ -98,7 +108,7 @@ class SendEmail
         // Create a new Email object that contains the configuration
         $email = App::make('App\Http\Controllers\UserEmail');
         // Send the email
-        $this->email->send($email);
+        $this->emailer->send($email);
     }
 }
 ```
