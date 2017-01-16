@@ -6,6 +6,7 @@ use PHPUnit_Framework_TestCase;
 use Illuminate\Mail\Message;
 use Bronanza\Emailer\LaravelEmailer;
 use Tests\Contracts\EmailStub;
+use Mockery;
 
 
 class LaravelEmailerTest extends PHPUnit_Framework_TestCase
@@ -16,7 +17,6 @@ class LaravelEmailerTest extends PHPUnit_Framework_TestCase
 	public function setup()
 	{
 		$this->email = new EmailStub();
-		$this->emailer = new LaravelEmailer();
 	}
 
 	public function test_get_template_data()
@@ -32,6 +32,10 @@ class LaravelEmailerTest extends PHPUnit_Framework_TestCase
 
 	public function test_send_email()
 	{
+		$this->emailer = \Mockery::mock('Emailer', function ($mock) {
+			$mock->shouldReceive('send');
+		});
+
 		$this->emailer->send($this->email);
 	}
 }
